@@ -1,3 +1,7 @@
+html, body {
+	margin: 0;
+	overflow-x: hidden;
+}
 /* Fonts */
 @font-face {
 	font-family: 'SanFranciscoRegular';
@@ -27,20 +31,44 @@
 sfRegular {
 	font-family: "SanFranciscoRegular";
 }
+sfRegular:after {
+	content: "\a";
+	white-space: pre;
+}
 sfMedium {
 	font-family: "SanFranciscoMedium";
+}
+sfMedium:after {
+	content: "\a";
+	white-space: pre;
 }
 sfSemibold {
 	font-family: "SanFranciscoSemibold";
 }
+sfSemibold:after {
+	content: "\a";
+	white-space: pre;
+}
 sfBold {
 	font-family: "SanFranciscoBold";
+}
+sfBold:after {
+	content: "\a";
+	white-space: pre;
 }
 sfHeavy {
 	font-family: "SanFranciscoHeavy";
 }
+sfHeavy:after {
+	content: "\a";
+	white-space: pre;
+}
 sfBlack {
 	font-family: "SanFranciscoBlack";
+}
+sfBlack:after {
+	content: "\a";
+	white-space: pre;
 }
 /* Indentations */
 .tab {
@@ -167,4 +195,64 @@ img {
 	font-size: 20px;
 	margin-right: 10px;
 	vertical-align: middle;
+}
+/*Scroll image cards*/
+div.polaroid {
+	width: 20%;
+	border-radius: 8px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 25px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+div.container {
+	text-align: center;
+	padding: 10px 20px;
+}
+.scrollView {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	height: 15%;
+	white-space: nowrap;
+}
+/*Bottom bar*/
+div.bottom {
+	background-color: #5a5a5a;
+	margin-bottom: 0px;
+	margin-top: 15px;
+	overflow-y: hidden;
+	box-shadow: inset 0 8px 5px 0px rgba(0, 0, 0, 0.2);
+}
+div.bottom > a {
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: white;
+	margin-left: 40px;
+	margin-top: 20px;
+	text-decoration: none;
+	margin-bottom: 20px;
+	text-align: top;
+}
+div.bottom > a.visited {
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: white;
+	margin-left: 40px;
+	margin-top: 20px;
+	text-decoration: none;
+	margin-bottom: 20px;
+	text-align: top;
+}
+div.bottom > a.link {
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: white;
+	margin-left: 40px;
+	margin-top: 20px;
+	text-decoration: none;
+	margin-bottom: 20px;
+	text-align: top;
 }
