@@ -158,7 +158,7 @@ img {
 /*Button*/
 .more-button {
 	float: right;
-	background: blue;
+	background: #309eda;
 	border: none;
 	border-radius: 50%;
 	height: 35px;
