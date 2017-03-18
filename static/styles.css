@@ -137,11 +137,20 @@ cell-header {
 cell-row {
 	font-family: "SanFranciscoRegular";
 	font-size: 100%;
+	color: grey;
+	float: left;
+	overflow-x: hidden;
+}
+@media (max-width: 1200px) {
+	cell-row {
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
 	width: 92%;
 	color: grey;
 	float: left;
 	overflow-x: hidden;
 	word-break: break-all;
+}
 }
 cell-row:after {
 	content: "\a";
