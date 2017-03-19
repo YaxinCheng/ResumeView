@@ -81,6 +81,20 @@ sfBlack:after {
 .bottom {
 	margin-bottom: 40px;
 }
+name-title {
+	padding-left: 40px;
+	font-size: 300%;
+	font-family: 'SanFranciscoBlack';
+	overflow-x: hidden;
+}
+@media (max-width: 339px) {
+	name-title {
+		padding-left: 7px;
+		font-size: 300%;
+		font-family: 'SanFranciscoBlack';
+		overflow-x: hidden;
+	}
+}
 button {
 	outline: none;
 }
@@ -107,8 +121,24 @@ cell {
 	transition: all .2s;
 	min-height: 160px;
 }
-
-@media (max-width: 1200px) {
+@media (max-width: 340px) {
+	cell {
+		margin-left: 10px;
+		margin-bottom: 7px;
+		margin-right: 0px;
+		display: block;
+		border-bottom: 1px solid #ccc;
+		font-family: "SanFranciscoRegular";
+		font-size: 150%;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+		min-height: 160px;
+	}
+}
+@media (min-width: 340px) and (max-width: 1200px) {
 	cell {
 		margin-left: 40px;
 		margin-bottom: 7px;
@@ -127,12 +157,17 @@ cell {
 .cell-img {
 	width: 150px;
 	margin-right: 10px;
+	float:left;
+	position: absolute;
 }
 cell-header {
 	font-family: "SanFranciscoBold";
 	font-size: 150%;
 	word-wrap: break-all;
 	white-space: pre;
+}
+cell-header.indentation {
+	margin-left: 160px;
 }
 cell-row {
 	font-family: "SanFranciscoRegular";
@@ -141,21 +176,25 @@ cell-row {
 	float: left;
 	overflow-x: hidden;
 }
+div.cell-content {
+	float:left;
+	max-width: 90%;
+	margin-left: 160px;
+}
 @media (max-width: 1200px) {
 	cell-row {
-	font-family: "SanFranciscoRegular";
-	font-size: 100%;
-	width: 92%;
-	color: grey;
-	float: left;
-	overflow-x: hidden;
-	word-break: break-all;
-}
+		font-family: "SanFranciscoRegular";
+		font-size: 100%;
+		width: 92%;
+		color: grey;
+		float: left;
+		overflow-x: hidden;
+		word-break: break-all;
+	}
 }
 cell-row:after {
 	content: "\a";
 	white-space: pre;
-	/*word-wrap: break-all;*/
 }
 img {
 	border-radius: 8px;
@@ -164,6 +203,31 @@ img {
 	max-height: 100%;
 	background-size: contain;
 	object-fit: cover;
+}
+img.thumbnail {
+	width: 150px;
+	height: 150px;
+}
+@media (max-width: 340px) {
+	.cell-img {
+		width: 94%;
+		margin-right: 10px;
+		float:left;
+		position: relative;
+	}
+	img.thumbnail {
+		width: 100%;
+	}
+	div.cell-content {
+		float:left;
+		max-width: 100%;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+	cell-header.indentation {
+		margin-top: 0px;
+		margin-left: 0px;
+	}
 }
 /* Tab */
 .tab-bar {
@@ -190,33 +254,6 @@ img {
 	-webkit-transition: all .2s;
 	-moz-transition: all .2s;
 	transition: all .2s;
-}
-@media (max-width: 1200px) {
-	.tab-bar {
-		height: 50px;
-		background: white;
-		margin-top: 15px;
-		padding-left: 30px;
-		overflow-x: scroll;
-		white-space: nowrap;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
-		width: 92%;
-	}
-	.tab-bar-item {
-		height: 50px;
-		margin-right: 0px;
-		text-align: baseline;
-		background: transparent;
-		font-family: "SanFranciscoSemiBold";
-		color: grey;
-		font-size: 200%;
-		border: none;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
-	}
 }
 .tab-bar-item-mouseLeft {
 	height: 50px;
@@ -257,6 +294,99 @@ img {
 	-moz-transition: all .2s;
 	transition: all .2s;
 }
+@media (max-width: 340px) {
+	.tab-bar {
+		width: 100%;
+		height: 50px;
+		background: white;
+		margin-top: 15px;
+		padding-left: 5px;
+		overflow-x: scroll;
+		white-space: nowrap;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+	.tab-bar-item {
+		height: 50px;
+		margin-right: 0px;
+		text-align: baseline;
+		background: transparent;
+		font-family: "SanFranciscoSemiBold";
+		color: grey;
+		font-size: 200%;
+		border: none;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+	.tab-bar-item-mouseLeft {
+		height: 50px;
+		margin-right: 0px;
+		text-align: left;
+		background: transparent;
+		font-family: "SanFranciscoHeavy";
+		color: black;
+		font-size: 200%;
+		border: none;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+	.tab-bar-item-mouseOver {
+		height: 50px;
+		margin-right: 0px;
+		text-align: left;
+		background: transparent;
+		font-family: "SanFranciscoSemiBold";
+		color: grey;
+		font-size: 250%;
+		border: none;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+	.tab-bar-item-isActive {
+		height: 50px;
+		margin-right: 0px;
+		text-align: left;
+		background: transparent;
+		font-family: "SanFranciscoHeavy";
+		color: black;
+		font-size: 250%;
+		border: none;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+}
+@media (min-width:340px) and (max-width: 1200px) {
+	.tab-bar {
+		height: 50px;
+		background: white;
+		margin-top: 15px;
+		padding-left: 30px;
+		overflow-x: scroll;
+		white-space: nowrap;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+		width: 92%;
+	}
+	.tab-bar-item {
+		height: 50px;
+		margin-right: 0px;
+		text-align: baseline;
+		background: transparent;
+		font-family: "SanFranciscoSemiBold";
+		color: grey;
+		font-size: 200%;
+		border: none;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+}
 /*Button*/
 .more-button {
 	float: right;
@@ -270,7 +400,26 @@ img {
 	margin-right: 10px;
 	vertical-align: middle;
 }
+@media (max-width: 340px) {
+	.more-button {
+		float: right;
+		background: #309eda;
+		border: none;
+		border-radius: 50%;
+		height: 35px;
+		width: 35px;
+		color: white;
+		font-size: 20px;
+		margin-right: 10px;
+		margin-top: 5px;
+		vertical-align: middle;
+	}
+}
 /*Scroll image cards*/
+sfHeavy.scrollHeader {
+	font-size: 200%;
+	margin-left: 40px;
+}
 div.polaroid {
 	width: 300px;
 	border-radius: 8px;
@@ -293,6 +442,30 @@ div.container {
 	white-space: nowrap;
 	padding-left: 25px;
 }
+@media (max-width: 339px) {
+	sfHeavy.scrollHeader {
+		font-size: 200%;
+		margin-left: 13px;
+	}
+	.scrollView {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		height: 15%;
+		white-space: nowrap;
+		padding-left: 2px;
+	}
+	div.polaroid {
+		width: 300px;
+		border-radius: 8px;
+		background-color: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		margin-bottom: 25px;
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 10px;
+		margin-right: 20px;
+	}
+}
 /*Bottom bar*/
 div.bottom {
 	background-color: #5a5a5a;
@@ -310,6 +483,18 @@ div.bottom > a {
 	text-decoration: none;
 	margin-bottom: 20px;
 	text-align: top;
+}
+@media (max-width: 339px) {
+	div.bottom > a {
+		font-family: "SanFranciscoRegular";
+		font-size: 100%;
+		color: white;
+		margin-left: 15px;
+		margin-top: 20px;
+		text-decoration: none;
+		margin-bottom: 20px;
+		text-align: top;
+	}
 }
 div.bottom > a.visited {
 	font-family: "SanFranciscoRegular";

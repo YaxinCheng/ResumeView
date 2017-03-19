@@ -24,7 +24,7 @@
     <!-- Header -->
     <br/>
     <head>
-		<sfBlack class='bottom tab' style="font-size: 300%">Yaxin Cheng</sfBlack>
+		<name-title>Yaxin Cheng</name-title>
 	</head>
 	<div class="tab-bar">
 		<button class="tab-bar-item-isActive" id='overview' onclick="tabClicked(this)" onmouseover="mouseMove(this)" onmouseleave="mouseOut(this)">Overview</button>
@@ -36,13 +36,13 @@
 	<hr/>
 	<body>
 		<cell>
-			<div class="cell-img" style="float:left;width: 150px;position: absolute;" align="left">
-				<img src='static/Images/paris.jpg' align="left" width="150" height="150">
+			<div class="cell-img" align="left">
+				<img src='static/Images/paris.jpg' align="left" class="thumbnail">
 			</div>
-			<cell-header style="margin-left: 160px">Test</cell-header>
+			<cell-header class="indentation">Test</cell-header>
 			<button class="more-button" >···</button>
 			<br/>
-			<div style="float:left;max-width: 90%;margin-left: 160px">
+			<div class="cell-content">
 			<cell-row>This is a test cell</cell-row>
 			<cell-row>Each row represents some info</cell-row>
 			<cell-row>Each row represents some info</cell-row>
@@ -52,7 +52,7 @@
 		</cell>
 
 		<div>
-			<sfHeavy style="font-size: 200%; margin-left: 40px;">Header</sfHeavy>
+			<sfHeavy class='scrollHeader'>Header</sfHeavy>
 		<div class='scrollView'>
 
 			<div class="polaroid">
