@@ -25,7 +25,7 @@
     <!-- Header -->
     <br/>
     <head>
-		<name-title>Yaxin Cheng</name-title>
+		<name-title id='title'>Yaxin Cheng</name-title>
 	</head>
 	<div class="tab-bar" id='tab-bar'>
 		<button class="tab-bar-item-first tab-bar-item-isActive" id='overview' onclick="tabClicked($(this))" onmouseover="mouseMove($(this))" onmouseleave="mouseOut($(this))" id='overview'>Overview</button>
@@ -76,8 +76,24 @@
 					<sfRegular style="font-size: 100%; color: grey;">Content</sfRegular>
 				</div>
 			</div>
-
 		</div>
+		<hr/>
+		<cell>
+			<div class="cell-img" align="left">
+				<img src='static/Images/paris.jpg' align="left" class="thumbnail">
+			</div>
+			<cell-header class="indentation">Test</cell-header>
+			<button class="more-button" onclick="showPanel($(this))" >···</button>
+			<br/>
+			<div class="cell-content">
+			<p>This is a test cell<br>
+			Each row represents some info<br>
+			Each row represents some info<br>
+			Each row represents some info</p>
+			</div>
+			<div style="clear:both"></div>
+		</cell>
+
 	</body>
 	<div class="bottom">
 		<br/>
@@ -143,5 +159,18 @@
 	function showPanel(element) {
 		// Show modal here
 	}
-	// scrollToTab();
+
+	window.onscroll = function(e) {
+		var docViewTop = $(window).scrollTop();
+	    var docViewBottom = docViewTop + $(window).height();
+
+	    var elemTop = $('#title').offset().top;
+	    var elemBottom = elemTop + $('#title').height();
+
+	    if ((elemBottom > docViewTop)) {
+	    	$('#tab-bar').removeClass('tab-bar-top');
+	    } else {
+	    	$('#tab-bar').addClass('tab-bar-top');
+	    }	
+	}
 </script>

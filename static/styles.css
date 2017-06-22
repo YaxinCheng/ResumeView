@@ -284,6 +284,15 @@ img.thumbnail {
 	-moz-transition: all .2s;
 	transition: all .2s;
 }
+.tab-bar-top {
+	z-index: 100;
+	height: 50px;
+	margin-top: 0px !important;
+	background: white;
+	position: fixed;
+	top: 0px;
+	box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
 .tab-bar-item-first {
 	padding-left: 35px;
 }
