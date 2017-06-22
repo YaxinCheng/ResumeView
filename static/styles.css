@@ -6,27 +6,33 @@ html, body {
 /* Fonts */
 @font-face {
 	font-family: 'SanFranciscoRegular';
-	src: url('Font/SF-UI-Display-Regular.ttf');
+	src: url('Font/SF-UI-Display-Regular.ttf'),
+		url('Font/SF-UI-Display-Regular.ttf') format("truetype");
 }
 @font-face {
 	font-family: 'SanFranciscoMedium';
-	src: url('Font/SF-UI-Display-Medium.ttf');
+	src: url('Font/SF-UI-Display-Medium.ttf'),
+		url('Font/SF-UI-Display-Medium.ttf') format("truetype");
 }
 @font-face {
 	font-family: 'SanFranciscoSemibold';
-	src: url('Font/SF-UI-Display-Semibold.ttf');
+	src: url('Font/SF-UI-Display-Semibold.ttf'),
+		url('Font/SF-UI-Display-Semibold.ttf') format("truetype");
 }
 @font-face {
 	font-family: 'SanFranciscoBold';
-	src: url('Font/SF-UI-Display-Bold.ttf');
+	src: url('Font/SF-UI-Display-Bold.ttf'),
+		url('Font/SF-UI-Display-Bold.ttf') format("truetype");
 }
 @font-face {
 	font-family: 'SanFranciscoHeavy';
-	src: url('Font/SF-UI-Display-Heavy.ttf');
+	src: url('Font/SF-UI-Display-Heavy.ttf'),
+		url('Font/SF-UI-Display-Heavy.ttf') format("truetype");
 }
 @font-face {
 	font-family: 'SanFranciscoBlack';
-	src: url('Font/SF-UI-Display-Black.ttf');
+	src: url('Font/SF-UI-Display-Black.ttf'),
+		url('Font/SF-UI-Display-Black.ttf') format("truetype");
 }
 cell-header-sfRegular {
 	font-family: "SanFranciscoRegular";
@@ -89,7 +95,7 @@ name-title {
 	font-family: 'SanFranciscoBlack';
 	overflow-x: hidden;
 }
-@media (max-width: 339px) {
+@media (max-width: 499px) {
 	name-title {
 		padding-left: 7px;
 		font-size: 300%;
@@ -108,22 +114,24 @@ hr {
 	margin:1em 0;
 	padding: 0;
 }
+
 cell {
 	margin-left: 40px;
 	margin-bottom: 7px;
-	margin-right: 25%;
 	display: block;
 	border-bottom: 1px solid #ccc;
 	font-family: "SanFranciscoRegular";
 	font-size: 150%;
 	overflow-y: scroll;
+	-webkit-overflow-scrolling:touch;
 	overflow-x: hidden;
 	-webkit-transition: all .2s;
 	-moz-transition: all .2s;
 	transition: all .2s;
 	min-height: 160px;
 }
-@media (max-width: 340px) {
+
+@media (max-width: 500px) {
 	cell {
 		margin-left: 10px;
 		margin-bottom: 7px;
@@ -133,6 +141,7 @@ cell {
 		font-family: "SanFranciscoRegular";
 		font-size: 150%;
 		overflow-y: scroll;
+		-webkit-overflow-scrolling:touch;
 		overflow-x: hidden;
 		-webkit-transition: all .2s;
 		-moz-transition: all .2s;
@@ -140,7 +149,7 @@ cell {
 		min-height: 160px;
 	}
 }
-@media (min-width: 340px) and (max-width: 1200px) {
+@media (min-width: 500px) and (max-width: 800px) {
 	cell {
 		margin-left: 40px;
 		margin-bottom: 7px;
@@ -150,6 +159,7 @@ cell {
 		font-family: "SanFranciscoRegular";
 		font-size: 150%;
 		overflow-y: scroll;
+		-webkit-overflow-scrolling:touch;
 		overflow-x: hidden;
 		-webkit-transition: all .2s;
 		-moz-transition: all .2s;
@@ -165,40 +175,65 @@ cell {
 cell-header {
 	font-family: "SanFranciscoBold";
 	font-size: 150%;
-	word-wrap: break-all;
+	word-wrap: break-word;
 	white-space: pre;
 }
 cell-header.indentation {
 	margin-left: 160px;
 }
-cell-row {
+div.cell-content {
+	float:left;
+	max-width: 100%;
+	margin-left: 160px;
+}
+div.cell-content-noimg {
+	float:left;
+	max-width: 100%;
+}
+div.cell-content > p {
 	font-family: "SanFranciscoRegular";
 	font-size: 100%;
 	color: grey;
 	float: left;
 	overflow-x: hidden;
 }
-div.cell-content {
-	float:left;
-	max-width: 90%;
-	margin-left: 160px;
+div.cell-content-noimg > p {
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: grey;
+	float: left;
+	overflow-x: hidden;
 }
-div.cell-content-noimg {
-	float:left;
-	max-width: 90%;
-}
-@media (max-width: 1200px) {
-	cell-row {
+@media (max-width: 800px) {
+	div.cell-content > p {
 		font-family: "SanFranciscoRegular";
 		font-size: 100%;
-		width: 92%;
+		width: 100%;
 		color: grey;
 		float: left;
 		overflow-x: hidden;
-		word-break: break-all;
+		word-break: break-word;
+	}
+	div.cell-content-noimg > p {
+		font-family: "SanFranciscoRegular";
+		font-size: 100%;
+		width: 100%;
+		color: grey;
+		float: left;
+		overflow-x: hidden;
+		word-break: break-word;
+	}
+	cell-header {
+		font-family: "SanFranciscoBold";
+		font-size: 150%;
+		width: 100%;
+		float: left;
+		overflow-x: hidden;
+		white-space: normal;
+		word-break: break-word;
 	}
 }
-cell-row:after {
+div.cell-content div.cell-content-noimg > p:after {
 	content: "\a";
 	white-space: pre;
 }
@@ -214,7 +249,7 @@ img.thumbnail {
 	width: 150px;
 	height: 150px;
 }
-@media (max-width: 340px) {
+@media (max-width: 500px) {
 	.cell-img {
 		width: 94%;
 		margin-right: 10px;
@@ -241,16 +276,19 @@ img.thumbnail {
 	height: 50px;
 	background: white;
 	margin-top: 15px;
-	padding-left: 30px;
 	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling:touch;
 	white-space: nowrap;
 	-webkit-transition: all .2s;
 	-moz-transition: all .2s;
 	transition: all .2s;
 }
+.tab-bar-item-first {
+	padding-left: 35px;
+}
 .tab-bar-item {
 	height: 50px;
-	margin-right: 5px;
 	text-align: baseline;
 	background: transparent;
 	font-family: "SanFranciscoSemiBold";
@@ -300,14 +338,18 @@ img.thumbnail {
 	-moz-transition: all .2s;
 	transition: all .2s;
 }
-@media (max-width: 340px) {
+@media (max-width: 500px) {
+	.tab-bar-item-first {
+		padding-left: 0px;
+	}
 	.tab-bar {
 		width: 100%;
 		height: 50px;
 		background: white;
 		margin-top: 15px;
-		padding-left: 5px;
 		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling:touch;
 		white-space: nowrap;
 		-webkit-transition: all .2s;
 		-moz-transition: all .2s;
@@ -316,6 +358,8 @@ img.thumbnail {
 	.tab-bar-item {
 		height: 50px;
 		margin-right: 0px;
+		padding-left: 10px;
+		padding-right: 5px;
 		text-align: baseline;
 		background: transparent;
 		font-family: "SanFranciscoSemiBold";
@@ -355,6 +399,8 @@ img.thumbnail {
 	.tab-bar-item-isActive {
 		height: 50px;
 		margin-right: 0px;
+		padding-left: 10px;
+		padding-right: 5px;
 		text-align: left;
 		background: transparent;
 		font-family: "SanFranciscoHeavy";
@@ -366,27 +412,47 @@ img.thumbnail {
 		transition: all .2s;
 	}
 }
-@media (min-width:340px) and (max-width: 1200px) {
+@media (min-width:500px) and (max-width: 800px) {
 	.tab-bar {
 		height: 50px;
 		background: white;
 		margin-top: 15px;
-		padding-left: 30px;
 		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling:touch;
 		white-space: nowrap;
 		-webkit-transition: all .2s;
 		-moz-transition: all .2s;
 		transition: all .2s;
-		width: 92%;
+		width: 100%;
 	}
 	.tab-bar-item {
 		height: 50px;
 		margin-right: 0px;
+		padding-left: 10px;
+		padding-right: 5px;
 		text-align: baseline;
 		background: transparent;
 		font-family: "SanFranciscoSemiBold";
 		color: grey;
 		font-size: 200%;
+		border: none;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+	.tab-bar-item-first {
+		padding-left: 35px;
+	}
+	.tab-bar-item-isActive {
+		height: 50px;
+		margin-right: 0px;
+		padding-right: 5px;
+		text-align: left;
+		background: transparent;
+		font-family: "SanFranciscoHeavy";
+		color: black;
+		font-size: 250%;
 		border: none;
 		-webkit-transition: all .2s;
 		-moz-transition: all .2s;
@@ -405,8 +471,11 @@ img.thumbnail {
 	font-size: 20px;
 	margin-right: 10px;
 	vertical-align: middle;
+	right: 25%;
+	position: absolute;
 }
-@media (max-width: 340px) {
+
+@media (max-width: 800px) {
 	.more-button {
 		float: right;
 		background: #309eda;
@@ -419,8 +488,10 @@ img.thumbnail {
 		margin-right: 10px;
 		margin-top: 5px;
 		vertical-align: middle;
+		display: none;
 	}
 }
+
 /*Scroll image cards*/
 sfHeavy.scrollHeader {
 	font-size: 200%;
@@ -441,14 +512,14 @@ sfRegular.subtitle {
 	font-size: 100%; 
 	color: grey;
 	overflow-x: hidden;
-	word-break: break-all;
+	word-break: break-word;
 	max-width: 80%;
 }
 sfRegular.date {
 	font-size: 100%; 
 	color: #309eda;
 	overflow-x: hidden;
-	word-break: break-all;
+	word-break: break-word;
 	max-width: 80%;
 }
 button.link {
@@ -460,6 +531,7 @@ button.link {
 	height: 40px;
 	border-bottom-right-radius: 8px;
 	border-bottom-left-radius: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 div.container {
 	text-align: center;
@@ -468,11 +540,14 @@ div.container {
 .scrollView {
 	overflow-x: scroll;
 	overflow-y: hidden;
+	-webkit-overflow-scrolling:touch;
+	overflow-y: hidden;
 	height: 15%;
 	white-space: nowrap;
 	padding-left: 25px;
+	margin-top: 10px;
 }
-@media (max-width: 339px) {
+@media (max-width: 499px) {
 	sfHeavy.scrollHeader {
 		font-size: 200%;
 		margin-left: 13px;
@@ -480,9 +555,12 @@ div.container {
 	.scrollView {
 		overflow-x: scroll;
 		overflow-y: hidden;
+		-webkit-overflow-scrolling:touch;
+		overflow-y: hidden;
 		height: 15%;
 		white-space: nowrap;
 		padding-left: 2px;
+		margin-top: 10px;
 	}
 	div.polaroid {
 		width: 300px;
@@ -500,9 +578,11 @@ div.container {
 div.bottom {
 	background-color: #5a5a5a;
 	margin-bottom: 0px;
-	margin-top: 15px;
+	margin-top: 50px;
 	overflow-y: hidden;
 	box-shadow: inset 0 8px 5px 0px rgba(0, 0, 0, 0.2);
+	bottom: 0px;
+	min-height: 100px;
 }
 div.bottom > a {
 	font-family: "SanFranciscoRegular";
@@ -514,7 +594,7 @@ div.bottom > a {
 	margin-bottom: 20px;
 	text-align: top;
 }
-@media (max-width: 339px) {
+@media (max-width: 499px) {
 	div.bottom > a {
 		font-family: "SanFranciscoRegular";
 		font-size: 100%;
@@ -556,18 +636,40 @@ a:visited {
 	text-decoration: none;
 }
 /*Right panel*/
-div.panel {
-	float: right;
-	right: -25%;
-	top: 0;
-	height: 100%;
-	width: 25%;
-	position: absolute;
-	z-index: 100;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	background-color: white;
-    opacity: 0.9;
-   	-webkit-transition: all .2s;
-	-moz-transition: all .2s;
-	transition: all .2s;
+@media(max-width: 800px) {
+	div.panel {
+	    opacity: 0;
+	    position: absolute;
+	    top: 32px;
+	    background: #fafafa;
+	    border: 1px solid transparent;
+	    border-radius: 6px;
+	    height: 0px;
+	    padding: 0 12px;
+	    overflow: hidden;
+	    -webkit-transition: all 500ms;
+	    transition: all 500ms;
+	}
+}
+@media(min-width: 800px) {
+	div.panel {
+		float: right;
+		height: 100%;
+		min-height: 160px;
+		margin-top: 0px;
+		align-self: top;
+		position: relative;
+		width: 25%;
+		z-index: 100;
+		right: -30%;
+		box-shadow: 10px 0px 0px 0px rgba(0, 0, 0, 0.2), 2px -11px 15px 0px rgba(0, 0, 0, 0.19);
+		background-color: white;
+	    opacity: 0.9;
+	   	-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		transition: all .2s;
+	}
+}
+div > a {
+	margin-left: 10px;
 }

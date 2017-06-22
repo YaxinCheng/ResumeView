@@ -27,31 +27,27 @@
     <head>
 		<name-title>Yaxin Cheng</name-title>
 	</head>
-	<div class="tab-bar">
-		<button class="tab-bar-item-isActive" id='overview' onclick="tabClicked(this)" onmouseover="mouseMove(this)" onmouseleave="mouseOut(this)">Overview</button>
-		<button class="tab-bar-item" id='skill' onclick="tabClicked(this)" onmouseover="mouseMove(this)" onmouseleave="mouseOut(this)">Skill</button>
-		<button class="tab-bar-item" id='projects' onclick="tabClicked(this)" onmouseover="mouseMove(this)" onmouseleave="mouseOut(this)">Projects</button>
-		<button class="tab-bar-item" id='experience' onclick="tabClicked(this)" onmouseover="mouseMove(this)" onmouseleave="mouseOut(this)">Experience</button>
-		<button class="tab-bar-item" id='contact' onclick="tabClicked(this)" onmouseover="mouseMove(this)" onmouseleave="mouseOut(this)">Contact</button>
+	<div class="tab-bar" id='tab-bar'>
+		<button class="tab-bar-item-first tab-bar-item-isActive" id='overview' onclick="tabClicked($(this))" onmouseover="mouseMove($(this))" onmouseleave="mouseOut($(this))" id='overview'>Overview</button>
+		<button class="tab-bar-item" id='skill' onclick="tabClicked($(this))" onmouseover="mouseMove($(this))" onmouseleave="mouseOut($(this))" id='skill'>Skill</button>
+		<button class="tab-bar-item" id='projects' onclick="tabClicked($(this))" onmouseover="mouseMove($(this))" onmouseleave="mouseOut($(this))" id='projects'>Projects</button>
+		<button class="tab-bar-item" id='experience' onclick="tabClicked($(this))" onmouseover="mouseMove($(this))" onmouseleave="mouseOut($(this))" id='experience'>Experience</button>
+		<button class="tab-bar-item" id='contact' onclick="tabClicked($(this))" onmouseover="mouseMove($(this))" onmouseleave="mouseOut($(this))" id='contact'>Contact</button>
 	</div>
 	<hr/>
-	<div id='rightPanel' class='panel' data-role='page' id='control'>
-        	<div data-role='panel' id='conrtolPanel'>
-        	</div>
-	</div>
 	<body>
 		<cell>
 			<div class="cell-img" align="left">
 				<img src='static/Images/paris.jpg' align="left" class="thumbnail">
 			</div>
 			<cell-header class="indentation">Test</cell-header>
-			<button class="more-button" onclick="showPanel(this)" >···</button>
+			<button class="more-button" onclick="showPanel($(this))" >···</button>
 			<br/>
 			<div class="cell-content">
-			<cell-row>This is a test cell</cell-row>
-			<cell-row>Each row represents some info</cell-row>
-			<cell-row>Each row represents some info</cell-row>
-			<cell-row>Each row represents some info</cell-row>
+			<p>This is a test cell<br>
+			Each row represents some info<br>
+			Each row represents some info<br>
+			Each row represents some info</p>
 			</div>
 			<div style="clear:both"></div>
 		</cell>
@@ -93,42 +89,59 @@
 </html>
 
 <script type="text/javascript">
-	tabItems = [document.getElementById('overview'), document.getElementById('skill'), document.getElementById('projects'), document.getElementById('experience'), document.getElementById('contact')];
+	tabItems = [$('#overview'), $('#skill'), $('#projects'), $('#experience'), $('#contact')];
 	panel = $('#rightPanel');
 	panelDisplay = 0;
 
+	function clearStatusForTab(tab) {
+		tab.removeClass('tab-bar-item-isActive');
+		tab.removeClass('tab-bar-item-mouseLeft');
+		tab.removeClass('tab-bar-item-mouseOver');
+		tab.removeClass('tab-bar-item');
+	}
+
+	function scrollToTab(element) {
+		$('#tab-bar').animate({scrollLeft: element.offset().left}, 800);
+	}
+
 	function tabClicked(element) {
 		for (i = 0; i < tabItems.length; i ++ ) {
-			tabItems[i].className = 'tab-bar-item';
+			clearStatusForTab(tabItems[i]);
+			tabItems[i].addClass('tab-bar-item');
 		}
-		element.className = 'tab-bar-item-isActive';
+		element.addClass('tab-bar-item-isActive');
+		scrollToTab(element);
 	}
 
 	function mouseMove(element) {
-		if (element.className != 'tab-bar-item-isActive') {
+		if (!element.hasClass('tab-bar-item-isActive')) {
 			for (i = 0; i < tabItems.length; i ++) {
-				if (tabItems[i].className == 'tab-bar-item-isActive') {
-					tabItems[i].className = 'tab-bar-item-mouseLeft';
+				if (tabItems[i].hasClass('tab-bar-item-isActive')) {
+					clearStatusForTab(tabItems[i]);
+					tabItems[i].addClass('tab-bar-item-mouseLeft');
 				}
+				tabItems[i].addClass('tab-bar-item');
 			}
-			element.className = 'tab-bar-item-mouseOver';
+			clearStatusForTab(element);
+			element.addClass('tab-bar-item-mouseOver');
 		}
 	}
 
 	function mouseOut(element) {
-		if (element.className != 'tab-bar-item-mouseLeft' && element.className != 'tab-bar-item-isActive') {
+		if (!element.hasClass('tab-bar-item-mouseLeft') && !element.hasClass('tab-bar-item-isActive')) {
 			for (i = 0; i < tabItems.length; i ++ ) {
-				if (tabItems[i].className == 'tab-bar-item-mouseLeft') {
-					tabItems[i].className = 'tab-bar-item-isActive';
+				if (tabItems[i].hasClass('tab-bar-item-mouseLeft')) {
+					clearStatusForTab(tabItems[i]);
+					tabItems[i].addClass('tab-bar-item-isActive');
 				}
 			}
-			element.className = 'tab-bar-item';
+			clearStatusForTab(element);
+			element.addClass('tab-bar-item');
 		}
 	}
 
 	function showPanel(element) {
-		panelDisplay = 1 - panelDisplay;
-		distance = panelDisplay == 0 ? '0' : '-25%';
-		panel.css('right', distance);
+		// Show modal here
 	}
+	// scrollToTab();
 </script>
