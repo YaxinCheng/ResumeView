@@ -1,3 +1,6 @@
+:root {
+	--theme-colour: #309eda;
+}
 html, body {
 	margin: 0px;
 	max-width: 100%;
@@ -104,7 +107,7 @@ name-title {
 	}
 }
 button {
-	outline: none;
+	outline: none !important;
 }
 hr {
 	display: block;
@@ -475,7 +478,7 @@ img.thumbnail {
 .more-button {
 	outline: none !important;
 	float: right;
-	background: #309eda;
+	background: var(--theme-colour);
 	border: none;
 	border-radius: 50%;
 	height: 35px;
@@ -490,7 +493,7 @@ img.thumbnail {
 }
 .head-button {
 	outline: none !important;
-	background: #309eda;
+	background: var(--theme-colour);
 	border: none;
 	border-radius: 50%;
 	height: 35px;
@@ -538,7 +541,7 @@ sfRegular.subtitle {
 }
 sfRegular.date {
 	font-size: 100%; 
-	color: #309eda;
+	color: var(--theme-colour);
 	overflow-x: hidden;
 	word-break: break-word;
 	max-width: 80%;
@@ -546,7 +549,7 @@ sfRegular.date {
 button.link {
 	outline: none !important;
 	font-size: 100%;
-	background: #309eda;
+	background: var(--theme-colour);
 	border: none;
 	color: white;
 	width: 100%;
@@ -650,11 +653,11 @@ div.bottom > a.link {
 }
 /*Out link*/
 a:link {
-	color: #309eda;
+	color: var(--theme-colour);
 	text-decoration: none;
 }
 a:visited {
-	color: #309eda;	
+	color: var(--theme-colour);	
 	text-decoration: none;
 }
 /*Right panel*/
