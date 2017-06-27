@@ -683,9 +683,6 @@ a:visited {
 		transition: all .2s;
 	}
 }
-div > a {
-	margin-left: 10px;
-}
 /*Top Corner image*/
 .imgSpan {
 	background-image: url("background.jpg");
@@ -698,4 +695,7 @@ div > a {
 	-webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
 	clip-path: polygon(100% 0, 0 0, 100% 100%);
 	-webkit-mask-image:-webkit-gradient(linear, right top, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+div.modal-body > a {
+	text-decoration: none;
 }
