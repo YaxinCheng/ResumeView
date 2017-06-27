@@ -20,7 +20,11 @@
 
     <link rel="shortcut icon" href="images/favicon.png">
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.getmdl.io/1.1.2/material.min.js"></script>
     <!-- Header -->
     <br/>
@@ -42,12 +46,28 @@
 	</div>
 	<hr/>
 	<body>
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      	<sfBlack style='font-size: 200%;'>Reason</sfHeavy>
+		        <button type="button" class="close" data-dismiss="modal" style="right: 10px; position: absolute;">&times;</button>
+		      </div>
+		      <div class="modal-body">
+		       	<sfHeavy style='font-size: 150%;'>Project tile</sfHeavy>
+		       	<sfRegular>Description</sfRegular>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
 		<cell>
 			<div class="cell-img" align="left">
 				<img src='static/Images/paris.jpg' align="left" class="thumbnail">
 			</div>
 			<cell-header class="indentation">Test</cell-header>
-			<button class="more-button" onclick="showPanel($(this))" >···</button>
+			<button class="more-button" data-toggle="modal" data-target="#myModal" onclick="showPanel($(this))" >···</button>
 			<br/>
 			<div class="cell-content">
 			<p>This is a test cell<br>
