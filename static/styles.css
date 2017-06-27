@@ -111,28 +111,29 @@ hr {
 	height: 1px;
 	border: 0;
 	border-top: 1px solid #ccc;
-	margin:1em 0;
+	margin-top:1em;
+	margin-bottom: 1px !important;
 	padding: 0;
 }
 
-cell {
+.cell {
 	margin-left: 40px;
 	margin-bottom: 7px;
 	display: block;
 	border-bottom: 1px solid #ccc;
 	font-family: "SanFranciscoRegular";
 	font-size: 150%;
-	overflow-y: scroll;
 	-webkit-overflow-scrolling:touch;
-	overflow-x: hidden;
+	overflow-y: hidden;
 	-webkit-transition: all .2s;
 	-moz-transition: all .2s;
 	transition: all .2s;
 	min-height: 160px;
+	position: relative;
 }
 
 @media (max-width: 500px) {
-	cell {
+	.cell {
 		margin-left: 10px;
 		margin-bottom: 7px;
 		margin-right: 0px;
@@ -140,7 +141,6 @@ cell {
 		border-bottom: 1px solid #ccc;
 		font-family: "SanFranciscoRegular";
 		font-size: 150%;
-		overflow-y: scroll;
 		-webkit-overflow-scrolling:touch;
 		overflow-x: hidden;
 		-webkit-transition: all .2s;
@@ -150,7 +150,7 @@ cell {
 	}
 }
 @media (min-width: 500px) and (max-width: 800px) {
-	cell {
+	.cell {
 		margin-left: 40px;
 		margin-bottom: 7px;
 		margin-right: 0px;
@@ -158,19 +158,21 @@ cell {
 		border-bottom: 1px solid #ccc;
 		font-family: "SanFranciscoRegular";
 		font-size: 150%;
-		overflow-y: scroll;
 		-webkit-overflow-scrolling:touch;
 		overflow-x: hidden;
 		-webkit-transition: all .2s;
 		-moz-transition: all .2s;
 		transition: all .2s;
+		position: relative;
 	}
 }
 .cell-img {
-	width: 150px;
+	width: 200px;
+	height: 100%;
 	margin-right: 10px;
 	float:left;
 	position: absolute;
+	-webkit-mask-image:-webkit-gradient(linear, left top, right top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 cell-header {
 	font-family: "SanFranciscoBold";
@@ -241,7 +243,7 @@ div.cell-content div.cell-content-noimg > p:after {
 	content: "\a";
 	white-space: pre;
 }
-img {
+div.polaroid > img {
 	border-radius: 8px;
 	margin-left: 0px;
 	max-width: 100%;
@@ -250,18 +252,24 @@ img {
 	object-fit: cover;
 }
 img.thumbnail {
-	width: 150px;
-	height: 150px;
+	object-fit: contain;
 }
 @media (max-width: 500px) {
 	.cell-img {
-		width: 94%;
-		margin-right: 10px;
+		width: 95%;
 		float:left;
 		position: relative;
+		height: 150px;
+		-webkit-mask-image: none;
 	}
 	img.thumbnail {
+		height: 150px;
 		width: 100%;
+		border-radius: 8px;
+		margin-left: 0px;
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: cover;
 	}
 	div.cell-content {
 		float:left;
