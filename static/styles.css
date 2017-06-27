@@ -355,7 +355,6 @@ img.thumbnail {
 		padding-left: 0px;
 	}
 	.tab-bar {
-		background: white;
 		overflow-x: scroll;
 		overflow-y: hidden;
 		-webkit-overflow-scrolling:touch;
