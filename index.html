@@ -27,6 +27,7 @@
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.getmdl.io/1.1.2/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src='static/func.js'></script>
     <!-- Header -->
     <br/>
     <head>
@@ -152,59 +153,6 @@
 
 <script type="text/javascript">
 	tabItems = [$('#overview'), $('#skill'), $('#projects'), $('#experience'), $('#contact')];
-	panel = $('#rightPanel');
-	panelDisplay = 0;
-
-	function clearStatusForTab(tab) {
-		tab.removeClass('tab-bar-item-isActive');
-		tab.removeClass('tab-bar-item-mouseLeft');
-		tab.removeClass('tab-bar-item-mouseOver');
-		tab.removeClass('tab-bar-item');
-	}
-
-	function scrollToTab(element) {
-		$('#tab-bar').animate({scrollLeft: element.offset().left}, 800);
-	}
-
-	function tabClicked(element) {
-		for (i = 0; i < tabItems.length; i ++ ) {
-			clearStatusForTab(tabItems[i]);
-			tabItems[i].addClass('tab-bar-item');
-		}
-		element.addClass('tab-bar-item-isActive');
-		scrollToTab(element);
-	}
-
-	function mouseMove(element) {
-		if (!element.hasClass('tab-bar-item-isActive')) {
-			for (i = 0; i < tabItems.length; i ++) {
-				if (tabItems[i].hasClass('tab-bar-item-isActive')) {
-					clearStatusForTab(tabItems[i]);
-					tabItems[i].addClass('tab-bar-item-mouseLeft');
-				}
-				tabItems[i].addClass('tab-bar-item');
-			}
-			clearStatusForTab(element);
-			element.addClass('tab-bar-item-mouseOver');
-		}
-	}
-
-	function mouseOut(element) {
-		if (!element.hasClass('tab-bar-item-mouseLeft') && !element.hasClass('tab-bar-item-isActive')) {
-			for (i = 0; i < tabItems.length; i ++ ) {
-				if (tabItems[i].hasClass('tab-bar-item-mouseLeft')) {
-					clearStatusForTab(tabItems[i]);
-					tabItems[i].addClass('tab-bar-item-isActive');
-				}
-			}
-			clearStatusForTab(element);
-			element.addClass('tab-bar-item');
-		}
-	}
-
-	function showPanel(element) {
-		// Show modal here
-	}
 
 	window.onscroll = function(e) {
 		var docViewTop = $(window).scrollTop();
