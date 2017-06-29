@@ -47,4 +47,16 @@ function mouseOut(element) {
 
 function showPanel(element) {
     // Show modal here
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    element.addClass('animated bounceIn').one(animationEnd, function(){
+        element.removeClass('animated bounceIn');
+    });
+}
+
+function openLink(element, url) {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    element.addClass('animated jello').one(animationEnd, function(){
+        element.removeClass('animated jello');
+    });
+    // Open link here
 }
