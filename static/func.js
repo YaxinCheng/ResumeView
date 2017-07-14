@@ -45,18 +45,19 @@ function mouseOut(element) {
     }
 }
 
-function showPanel(element) {
-    // Show modal here
+function buttonAnimation(element, animation) {
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-    element.addClass('animated bounceIn').one(animationEnd, function(){
-        element.removeClass('animated bounceIn');
+    var animationCls = 'animated ' + animation;
+    element.addClass(animationCls).one(animationEnd, function(){
+        element.removeClass(animationCls);
     });
 }
 
+function showPanel(element) {
+    // Show modal here
+}
+
 function openLink(element, url) {
-    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-    element.addClass('animated jello').one(animationEnd, function(){
-        element.removeClass('animated jello');
-    });
+    
     // Open link here
 }

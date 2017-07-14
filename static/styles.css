@@ -698,7 +698,6 @@ a:visited {
 }
 /*Top Corner image*/
 .imgSpan {
-	background-image: url("background.jpg");
 	width: 300px; 
 	height: 300px; 
 	position: absolute; 
@@ -708,6 +707,9 @@ a:visited {
 	-webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
 	clip-path: polygon(100% 0, 0 0, 100% 100%);
 	-webkit-mask-image:-webkit-gradient(linear, right top, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+.overviewSpan {
+	background-image: url("background.jpg");
 }
 div.modal-body > a {
 	text-decoration: none;

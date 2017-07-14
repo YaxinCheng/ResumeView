@@ -35,7 +35,7 @@
     <br/>
     <head>
         <!-- HEAD Image -->
-    	<span class="imgSpan"></span>
+    	<span class="imgSpan overviewSpan"></span>
     	<div>
 			<name-title id='title'>Yaxin Cheng</name-title>
 			<span style="margin-left: 25px;">
@@ -63,7 +63,7 @@
 		    <div class="modal-content" id='modal-content'>
 
 		      <div class="modal-header">
-		      	<sfBlack style='font-size: 200%;'>Projects</sfHeavy>
+		      	<sfBlack style='font-size: 200%;'>Projects</sfBlack>
 		        <button type="button" class="close" data-dismiss="modal" style="right: 10px; position: absolute;">&times;</button>
 		      </div>
 		      <div class="modal-body">
@@ -87,7 +87,7 @@
 				<img src='static/Images/paris.jpg' align="left" class="thumbnail">
 			</div>
 			<cell-header class="indentation">Test</cell-header>
-			<button class="more-button" data-toggle="modal" data-target="#myModal" onclick="showPanel($(this))" ><i class='material-icons' style="padding-top: 3px;">menu</i></button>
+			<button class="more-button" onmousedown="buttonAnimation($(this), 'bounceIn')" onclick="showPanel($(this))" ><i class='material-icons' style="padding-top: 3px;">menu</i></button>
 			<br/>
 			<div class="cell-content">
 			<p>This is a test cell<br>
@@ -112,7 +112,7 @@
 					<sfRegular style="font-size: 100%; color: grey;">Content</sfRegular>
 				</div>
 				<div class="container" style="width: 100%; padding: 0px 0px;margin-bottom: 0.5px">
-				<button class="link" onclick="openLink($(this), '')">GitHub</button>
+				<button class="link" onmousedown='buttonAnimation($(this), "pulse")' onclick="openLink($(this), '')">GitHub</button>
 				</div>
 			</div>
 
@@ -133,7 +133,7 @@
 				<img src='static/Images/paris.jpg' align="left" class="thumbnail">
 			</div>
 			<cell-header class="indentation">Test</cell-header>
-			<button class="more-button" onclick="showPanel($(this))" ><i class='material-icons' style="padding-top: 3px;">chevron_right</i></button>
+			<button class="more-button" onmousedown="buttonAnimation($(this), 'bounceIn')" onclick="showPanel($(this))" ><i class='material-icons' style="padding-top: 3px;">chevron_right</i></button>
 			<br/>
 			<div class="cell-content">
 			<p>This is a test cell<br>
