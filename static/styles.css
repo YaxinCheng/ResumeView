@@ -616,7 +616,6 @@ div.bottom > a {
 	color: white !important;
 	margin-left: 40px;
 	margin-top: 20px;
-	text-decoration: none;
 	margin-bottom: 20px;
 	text-align: top;
 }
@@ -627,7 +626,6 @@ div.bottom > a {
 		color: white;
 		margin-left: 15px;
 		margin-top: 20px;
-		text-decoration: none;
 		margin-bottom: 20px;
 		text-align: top;
 	}
@@ -638,7 +636,6 @@ div.bottom > a.visited {
 	color: white;
 	margin-left: 40px;
 	margin-top: 20px;
-	text-decoration: none;
 	margin-bottom: 20px;
 	text-align: top;
 }
@@ -648,18 +645,13 @@ div.bottom > a.link {
 	color: white;
 	margin-left: 40px;
 	margin-top: 20px;
-	text-decoration: none;
 	margin-bottom: 20px;
 	text-align: top;
 }
 /*Out link*/
-a:link {
-	color: var(--theme-colour);
-	text-decoration: none;
-}
-a:visited {
-	color: var(--theme-colour);	
-	text-decoration: none;
+a, a:link, a:visited, a:hover {
+	color: var(--theme-colour)!important;
+	text-decoration: none !important;
 }
 /*Right panel*/
 @media(max-width: 800px) {
@@ -711,6 +703,16 @@ a:visited {
 .overviewSpan {
 	background-image: url("background.jpg");
 }
-div.modal-body > a {
-	text-decoration: none;
+td.title {
+	padding-right: 5px;
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: grey;
+	overflow-x: hidden;
+}
+td.content {
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: grey;
+	overflow-x: hidden;
 }
