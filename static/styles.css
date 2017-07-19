@@ -101,9 +101,6 @@ name-title {
 @media (max-width: 499px) {
 	name-title {
 		padding-left: 7px;
-		font-size: 300%;
-		font-family: 'SanFranciscoBlack';
-		overflow-x: hidden;
 	}
 }
 button {
@@ -121,13 +118,13 @@ hr {
 
 .cell {
 	margin-left: 40px;
-	margin-bottom: 7px;
+	margin-right: 0px;
 	display: block;
 	border-bottom: 1px solid #ccc;
 	font-family: "SanFranciscoRegular";
 	font-size: 150%;
 	-webkit-overflow-scrolling:touch;
-	overflow-y: hidden;
+	overflow: hidden;
 	-webkit-transition: all .2s;
 	-moz-transition: all .2s;
 	transition: all .2s;
@@ -138,40 +135,13 @@ hr {
 @media (max-width: 500px) {
 	.cell {
 		margin-left: 10px;
-		margin-bottom: 7px;
-		margin-right: 0px;
-		display: block;
-		border-bottom: 1px solid #ccc;
-		font-family: "SanFranciscoRegular";
-		font-size: 150%;
-		-webkit-overflow-scrolling:touch;
 		overflow-x: hidden;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
-		min-height: 160px;
-	}
-}
-@media (min-width: 500px) and (max-width: 800px) {
-	.cell {
-		margin-left: 40px;
-		margin-bottom: 7px;
-		margin-right: 0px;
-		display: block;
-		border-bottom: 1px solid #ccc;
-		font-family: "SanFranciscoRegular";
-		font-size: 150%;
-		-webkit-overflow-scrolling:touch;
-		overflow-x: hidden;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
-		position: relative;
 	}
 }
 .cell-img {
 	width: 200px;
 	height: 100%;
+	z-index: -1;
 	border-radius: 4px;
 	margin-right: 10px;
 	float:left;
@@ -184,15 +154,10 @@ cell-header {
 	word-wrap: break-word;
 	white-space: pre;
 }
-cell-header.indentation {
+.indentation {
 	margin-left: 160px;
 }
 div.cell-content {
-	float:left;
-	max-width: 100%;
-	margin-left: 160px;
-}
-div.cell-content-noimg {
 	float:left;
 	max-width: 100%;
 }
@@ -205,45 +170,19 @@ div.cell-content > p {
 	overflow-x: hidden;
 	margin-top: 10px;
 }
-div.cell-content-noimg > p {
-	font-family: "SanFranciscoRegular";
-	font-size: 100%;
-	line-height: 130%;
-	color: grey;
-	float: left;
-	overflow-x: hidden;
-	margin-top: 10px;
-}
 @media (max-width: 800px) {
 	div.cell-content > p {
-		font-family: "SanFranciscoRegular";
-		font-size: 100%;
 		width: 100%;
-		color: grey;
-		float: left;
-		overflow-x: hidden;
-		word-break: break-word;
-	}
-	div.cell-content-noimg > p {
-		font-family: "SanFranciscoRegular";
-		font-size: 100%;
-		width: 100%;
-		color: grey;
-		float: left;
-		overflow-x: hidden;
 		word-break: break-word;
 	}
 	cell-header {
-		font-family: "SanFranciscoBold";
-		font-size: 150%;
 		width: 100%;
 		float: left;
 		overflow-x: hidden;
 		white-space: normal;
-		word-break: break-word;
 	}
 }
-div.cell-content div.cell-content-noimg > p:after {
+div.cell-content > p:after {
 	content: "\a";
 	white-space: pre;
 }
@@ -261,7 +200,6 @@ img.thumbnail {
 @media (max-width: 500px) {
 	.cell-img {
 		width: 95%;
-		float:left;
 		position: relative;
 		height: 150px;
 		-webkit-mask-image: none;
@@ -275,14 +213,7 @@ img.thumbnail {
 		max-height: 100%;
 		object-fit: cover;
 	}
-	div.cell-content {
-		float:left;
-		max-width: 100%;
-		margin-top: 0px;
-		margin-left: 0px;
-	}
-	cell-header.indentation {
-		margin-top: 0px;
+	.indentation {
 		margin-left: 0px;
 	}
 }
@@ -290,7 +221,7 @@ img.thumbnail {
 .tab-bar {
 	max-width: 100%;
 	height: 53px;
-	overflow-x: scroll;
+	overflow-x: auto;
 	overflow-y: hidden;
 	-webkit-overflow-scrolling:touch;
 	white-space: nowrap;
@@ -366,113 +297,31 @@ img.thumbnail {
 	.tab-bar-item-first {
 		padding-left: 0px;
 	}
-	.tab-bar {
-		overflow-x: scroll;
-		overflow-y: hidden;
-		-webkit-overflow-scrolling:touch;
-		white-space: nowrap;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
-	}
 	.tab-bar-item {
-		height: 50px;
-		margin-right: 0px;
 		padding-left: 10px;
 		padding-right: 5px;
-		text-align: baseline;
-		background: transparent;
-		font-family: "SanFranciscoSemiBold";
-		color: grey;
-		font-size: 200%;
-		border: none;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
 	}
 	.tab-bar-item-mouseLeft {
-		height: 50px;
 		margin-right: 0px;
-		text-align: left;
-		background: transparent;
-		font-family: "SanFranciscoHeavy";
-		color: black;
-		font-size: 200%;
-		border: none;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
 	}
 	.tab-bar-item-mouseOver {
-		height: 50px;
 		margin-right: 0px;
-		text-align: left;
-		background: transparent;
-		font-family: "SanFranciscoSemiBold";
-		color: grey;
-		font-size: 250%;
-		border: none;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
 	}
 	.tab-bar-item-isActive {
-		height: 50px;
 		margin-right: 0px;
-		padding-left: 10px;
-		padding-right: 5px;
-		text-align: left;
-		background: transparent;
-		font-family: "SanFranciscoHeavy";
-		color: black;
-		font-size: 250%;
-		border: none;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
 	}
 }
 @media (min-width:500px) and (max-width: 800px) {
-	.tab-bar {
-		overflow-x: scroll;
-		overflow-y: hidden;
-		-webkit-overflow-scrolling:touch;
-		white-space: nowrap;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
-	}
 	.tab-bar-item {
-		height: 50px;
-		margin-right: 0px;
 		padding-left: 10px;
 		padding-right: 5px;
-		text-align: baseline;
-		background: transparent;
-		font-family: "SanFranciscoSemiBold";
-		color: grey;
-		font-size: 200%;
-		border: none;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
 	}
 	.tab-bar-item-first {
 		padding-left: 35px;
 	}
 	.tab-bar-item-isActive {
-		height: 50px;
 		margin-right: 0px;
 		padding-right: 5px;
-		text-align: left;
-		background: transparent;
-		font-family: "SanFranciscoHeavy";
-		color: black;
-		font-size: 250%;
-		border: none;
-		-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
 	}
 }
 /*Button*/
@@ -564,14 +413,14 @@ div.container {
 	padding: 10px 20px;
 }
 .scrollView {
-	overflow-x: scroll;
+	overflow-x: auto;
 	overflow-y: hidden;
 	-webkit-overflow-scrolling:touch;
-	overflow-y: hidden;
 	height: 15%;
 	white-space: nowrap;
 	padding-left: 25px;
-	margin-top: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid #ccc;
 }
 @media (max-width: 499px) {
 	sfHeavy.scrollHeader {
@@ -579,25 +428,11 @@ div.container {
 		margin-left: 13px;
 	}
 	.scrollView {
-		overflow-x: scroll;
-		overflow-y: hidden;
-		-webkit-overflow-scrolling:touch;
-		overflow-y: hidden;
-		height: 15%;
-		white-space: nowrap;
 		padding-left: 2px;
 		margin-top: 10px;
 	}
 	div.polaroid {
-		width: 300px;
-		border-radius: 8px;
-		background-color: white;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		margin-bottom: 25px;
-		display: inline-block;
-		vertical-align: top;
 		margin-left: 10px;
-		margin-right: 20px;
 	}
 }
 /*Bottom bar*/
@@ -616,20 +451,12 @@ div.bottom > a {
 	color: white !important;
 	margin-left: 40px;
 	margin-top: 20px;
-	text-decoration: none;
 	margin-bottom: 20px;
 	text-align: top;
 }
 @media (max-width: 499px) {
 	div.bottom > a {
-		font-family: "SanFranciscoRegular";
-		font-size: 100%;
-		color: white;
 		margin-left: 15px;
-		margin-top: 20px;
-		text-decoration: none;
-		margin-bottom: 20px;
-		text-align: top;
 	}
 }
 div.bottom > a.visited {
@@ -638,7 +465,6 @@ div.bottom > a.visited {
 	color: white;
 	margin-left: 40px;
 	margin-top: 20px;
-	text-decoration: none;
 	margin-bottom: 20px;
 	text-align: top;
 }
@@ -648,54 +474,15 @@ div.bottom > a.link {
 	color: white;
 	margin-left: 40px;
 	margin-top: 20px;
-	text-decoration: none;
 	margin-bottom: 20px;
 	text-align: top;
 }
 /*Out link*/
-a:link {
-	color: var(--theme-colour);
-	text-decoration: none;
+a, a:link, a:visited, a:hover {
+	color: var(--theme-colour)!important;
+	text-decoration: none !important;
 }
-a:visited {
-	color: var(--theme-colour);	
-	text-decoration: none;
-}
-/*Right panel*/
-@media(max-width: 800px) {
-	div.panel {
-	    opacity: 0;
-	    position: absolute;
-	    top: 32px;
-	    background: #fafafa;
-	    border: 1px solid transparent;
-	    border-radius: 6px;
-	    height: 0px;
-	    padding: 0 12px;
-	    overflow: hidden;
-	    -webkit-transition: all 500ms;
-	    transition: all 500ms;
-	}
-}
-@media(min-width: 800px) {
-	div.panel {
-		float: right;
-		height: 100%;
-		min-height: 160px;
-		margin-top: 0px;
-		align-self: top;
-		position: relative;
-		width: 25%;
-		z-index: 100;
-		right: -30%;
-		box-shadow: 10px 0px 0px 0px rgba(0, 0, 0, 0.2), 2px -11px 15px 0px rgba(0, 0, 0, 0.19);
-		background-color: white;
-	    opacity: 0.9;
-	   	-webkit-transition: all .2s;
-		-moz-transition: all .2s;
-		transition: all .2s;
-	}
-}
+
 /*Top Corner image*/
 .imgSpan {
 	width: 300px; 
@@ -706,11 +493,25 @@ a:visited {
 	z-index: -1;
 	-webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
 	clip-path: polygon(100% 0, 0 0, 100% 100%);
-	-webkit-mask-image:-webkit-gradient(linear, right top, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+@media(max-width: 800px) {
+	.imgSpan {
+		display: none;
+	}
 }
 .overviewSpan {
-	background-image: url("background.jpg");
+	background-image: url("background.png");
 }
-div.modal-body > a {
-	text-decoration: none;
+td.title {
+	padding-right: 5px;
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: grey;
+	overflow-x: hidden;
+}
+td.content {
+	font-family: "SanFranciscoRegular";
+	font-size: 100%;
+	color: grey;
+	overflow-x: hidden;
 }
